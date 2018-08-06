@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>parent</title>
+</head>
+<body>
+<iframe src="./child.html" frameborder="0" class="iframe"></iframe>
+<div>
+    parent
+    <button class="btn">to child</button>
+</div>
+</body>
+</html>
+<script>
+    document.querySelector('.btn').addEventListener('click', () => {
+        window.frames[0].postMessage('parent', 'http://localhost:8080');
+    });
+
+    window.addEventListener('message', e => {
+        console.info('from child:' + JSON.stringify(e.data));
+    });
+</script>

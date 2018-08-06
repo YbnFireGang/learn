@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test network</title>
+</head>
+<body>
+<button class="test">test</button>
+</body>
+</html>
+<script>
+    document.querySelector('.test').addEventListener('click', () => {
+        const DATE_BEFORE = Date.now(),
+            SRC_IMG = './img/test.png',
+            FILE_SIZE = 2.02;
+        let img = new Image();
+        img.src = SRC_IMG;
+        img.onload = (e) => {
+            let result = FILE_SIZE / (Date.now() - DATE_BEFORE) * 1000;
+            console.info(result)
+        }
+    })
+</script>
