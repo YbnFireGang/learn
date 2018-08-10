@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        :root {
+            --box-size: 12vw;
+            --box-half-size: 6vw;
+            --minus-box-half-size: -6vw;
+            --card-size: 3vw;
+            --minus-card-size: -3vw;
+        }
+
+        .box-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: var(--box-size);
+            height: var(--box-size);
+            margin: 10% auto;
+            position: relative;
+            transform: perspective(100vw);
+            transform-style: preserve-3d;
+            animation: to-rotate 6s linear infinite;
+        }
+
+        .box-wrap:before {
+            content: '';
+            width: var(--box-half-size);
+            height: var(--box-half-size);
+            background: #000;
+            transform: translateX(var(--card-size));
+        }
+
+        .box-wrap:after {
+            content: '';
+            width: var(--box-half-size);
+            height: var(--box-half-size);
+            background: #000;
+            transform: rotateX(90deg) translateX(var(--minus-card-size));
+        }
+
+        @keyframes to-rotate {
+            15% {
+                transform: rotateX(135deg) rotateY(45deg);
+            }
+            30% {
+                transform: rotateY(135deg);
+            }
+            45% {
+                transform: rotateZ(135deg);
+            }
+            60% {
+                transform: rotateY(-45deg);
+            }
+            75% {
+                transform: rotateX(-135deg);
+            }
+            90% {
+                transform: rotateZ(-45deg);
+            }
+            100% {
+                transform: rotateX(145deg);
+            }
+        }
+
+        .item {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: var(--box-size);
+            height: var(--box-size);
+            color: #fd6a7f;
+            font-size: var(--box-half-size);
+            border: 2px solid #7F8EA0;
+            background: rgba(143, 255, 161, 0.5);
+        }
+
+        .item-top {
+            transform: rotateX(90deg) translateZ(var(--box-half-size));
+        }
+
+        .item-bottom {
+            transform: rotateX(-90deg) translateZ(var(--box-half-size));
+        }
+
+        .item-left {
+            transform: rotateY(90deg) translateZ(var(--minus-box-half-size));
+        }
+
+        .item-right {
+            transform: rotateY(90deg) translateZ(var(--box-half-size));
+        }
+
+        .item-front {
+            transform: translateZ(var(--box-half-size));
+        }
+
+        .item-back {
+            transform: translateZ(var(--minus-box-half-size)) rotateY(180deg);
+        }
+
+    </style>
+</head>
+<body>
+<div class="box-wrap">
+    <div class="item-top item">A</div>
+    <div class="item-bottom item">B</div>
+    <div class="item-left item">C</div>
+    <div class="item-right item">D</div>
+    <div class="item-front item">E</div>
+    <div class="item-back item">F</div>
+</div>
+</body>
+</html>
