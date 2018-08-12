@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>umbrella</title>
+    <!--
+    触发BFC：
+    根元素
+    float属性不为none
+    position为absolute或fixed
+    display为inline-block, table-cell, table-caption, flex, inline-flex
+    外层overflow不为visible
+    -->
+    <style>
+        .umbrella {
+            position: relative;
+            margin: 20px auto;
+            width: 160px;
+            height: 80px;
+            border-radius: 20px;
+            background: radial-gradient(20px 80px at bottom, #ffc307 20px, transparent),
+            radial-gradient(40px 80px at bottom, #FF9800 40px, transparent),
+            radial-gradient(60px 80px at bottom, #FF5722 60px, transparent),
+            radial-gradient(80px 80px at bottom, #f4211e 80px, transparent);
+        }
+
+        .umbrella:before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            display: block;
+            background: #e9411e;
+            border-radius: 50%;
+            position: absolute;
+            top: -8px;
+            left: 75px;
+        }
+
+        .umbrella:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 80px;
+            width: 1px;
+            height: 190px;
+            box-shadow: 0 0 1px 0 #ffc307;
+            background: #e9411e;
+        }
+    </style>
+</head>
+<body>
+
+<div class="umbrella"></div>
+</body>
+</html>
