@@ -1,0 +1,25 @@
+body {
+  background: url(./img/bg.jpg) no-repeat;
+  overflow: hidden;
+}
+
+.outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: perspective(352px);
+  transform-style: preserve-3d;
+  .img-wrap {
+    position: relative;
+    transform-style: preserve-3d;
+    @for $i from 0 through 19 {
+      .img#{$i+1} {
+        position: absolute;
+        $deg: $i*18deg;
+        font-size: 0;
+        transform-origin: 50% 50%;
+        transform: rotateY($deg) translateZ(404px)
+      }
+    }
+  }
+}

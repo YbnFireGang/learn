@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="./full-rotate.css">
+</head>
+<body>
+<div class="outer">
+    <div class="img-wrap j-stage">
+        <img src="./img/p1.png" alt="" class="img1">
+        <img src="./img/p2.png" alt="" class="img2">
+        <img src="./img/p3.png" alt="" class="img3">
+        <img src="./img/p4.png" alt="" class="img4">
+        <img src="./img/p5.png" alt="" class="img5">
+        <img src="./img/p6.png" alt="" class="img6">
+        <img src="./img/p7.png" alt="" class="img7">
+        <img src="./img/p8.png" alt="" class="img8">
+        <img src="./img/p9.png" alt="" class="img9">
+        <img src="./img/p10.png" alt="" class="img10">
+        <img src="./img/p11.png" alt="" class="img11">
+        <img src="./img/p12.png" alt="" class="img12">
+        <img src="./img/p13.png" alt="" class="img13">
+        <img src="./img/p14.png" alt="" class="img14">
+        <img src="./img/p15.png" alt="" class="img15">
+        <img src="./img/p16.png" alt="" class="img16">
+        <img src="./img/p17.png" alt="" class="img17">
+        <img src="./img/p18.png" alt="" class="img18">
+        <img src="./img/p19.png" alt="" class="img19">
+        <img src="./img/p20.png" alt="" class="img20">
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+    (function (doc, win) {
+        const stage = {
+            jStage: doc.querySelector('.j-stage'),
+            pageStartX: 0,
+            targetX: 0,
+            rotate: false,
+
+            addListener() {
+                this.jStage.addEventListener('touchstart', e => {
+                    this.pageStartX = e.targetTouches[0].pageX - this.targetX;
+                });
+                this.jStage.addEventListener('touchmove', e => {
+                    if (this.rotate) return;
+                    this.targetX = e.targetTouches[0].pageX - this.pageStartX;
+                    this.util.rotateY(this.jStage, this.targetX);
+                });
+                win.addEventListener('mousewheel', e => {
+                    this.targetX = this.targetX + e.deltaY / 10;
+                    this.util.rotateY(this.jStage, this.targetX);
+                });
+
+                // device rotate
+                win.addEventListener('deviceorientation', e => {
+                    let gamma = e.gamma;
+                    if (Math.abs(gamma) > 1) {
+                        this.rotate = true;
+                        this.util.rotateY(this.jStage, gamma * 3);
+                    } else {
+                        this.rotate = false;
+                    }
+                });
+            },
+            init() {
+                this.addListener();
+            },
+            util: {
+                rotateY(el, deg) {
+                    el.style.transform = `rotateY(${deg}deg)`;
+                }
+            }
+        };
+
+        stage.init();
+    })(document, window);
+</script>
