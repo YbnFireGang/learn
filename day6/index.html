@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Skill</title>
+    <script>
+      //jQuery 结构分析
+      (function (win, undefined) {
+        var jQuery = function () {
+          return new jQuery.fn.init();
+        };
+        jQuery.fn = jQuery.prototype = {
+
+          init: function () {
+            console.info(this.property1);
+          },
+          extend: function () {
+
+          }
+        };
+        jQuery.fn.init.prototype = jQuery.fn; // 这句话作用是让jQuery.fn.init的原型指向 jQuery.fn，这样init中就可以访问jQuery.fn上的原型链
+        jQuery.fn.property1 = 1;
+        window.jQuery = jQuery;
+      })(window);
+      jQuery();
+
+
+      // 模拟函数重载
+      function overload(obj, key, fn) {
+        var oldFn = obj[key]; //闭包临时保存上一次函数
+        obj[key] = function () {
+          if (arguments.length === fn.length) {
+            fn.apply(this, arguments);
+          } else if (typeof oldFn === 'function') {
+            oldFn.apply(this, arguments); //依次递归上一次的函数
+          }
+        }
+      }
+
+      var friends = ['friend1', 'friend2'];
+      overload(friends, 'find', function () {
+        console.info('none')
+      });
+      overload(friends, 'find', function (name1) {
+        console.info(1)
+      });
+      overload(friends, 'find', function (name1, name2) {
+        console.info(2)
+      });
+      friends['find']();
+      friends['find']('name1');
+      friends['find']('name1', 'name2');
+
+      //
+      document.addEventListener('DOMContentloaded') // jQuery.ready(); //快于 window.onload
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
