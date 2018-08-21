@@ -1,1 +1,11 @@
 > command
+- cd
+- ls
+- pwd [-P] //current working directory
+- mkdir file-name [-m -p] //create empty directory
+- rmdir file-name [-p] //remove empty directory
+- cp original-file target-file [-r]
+- rm file [-r -i -f]
+- mv original-file target-file [-f -i]
+- head [-n number] txt
+- tail [-n number] txt
