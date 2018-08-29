@@ -9,3 +9,5 @@
 - mv original-file target-file [-f -i]
 - head [-n number] txt
 - tail [-n number] txt
+- ln [-s] source target
+- tar [xvf] file //unzip file
