@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Add favorite</title>
+    <style>
+        .add-favorite {
+            cursor: pointer;
+            width: 30px;
+            margin-right: 5px;
+        }
+    </style>
 </head>
 <body>
-<button class="j-add-favorite">点赞</button>
+<img src="./img/favorite.png" alt="" class="j-add-favorite add-favorite">
 </body>
 </html>
 <script src="./js/lib/jquery.min.js"></script>
@@ -17,9 +24,8 @@
   $.PraiseButton = PraiseButton;
 
   $.fn.addFavorite = function (num) {
-    this.after('<span class="js-add-num">0</span>');
-
     var thumb = new $.Thumb(num);
+    this.after('<span class="js-add-num">' + thumb.getFavorite() + '</span>');
     this.click(function () {
       thumb.addFavorite();
       $('.js-add-num').text(thumb.getFavorite());
@@ -27,5 +33,5 @@
     return this;
   };
 
-  $('.j-add-favorite').addFavorite(0);
+  $('.j-add-favorite').addFavorite();
 </script>
