@@ -1,5 +1,5 @@
 class PraiseButton {
-  constructor(initFavorite) {
+  constructor(initFavorite = 0) {
     this.favorite = initFavorite;
   }
 
@@ -23,4 +23,3 @@ class Thumb extends PraiseButton {
   }
 }
 
-module.exports = Thumb;

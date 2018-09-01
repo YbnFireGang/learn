@@ -2,13 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Add favorite</title>
 </head>
 <body>
 <button class="j-add-favorite">点赞</button>
-<span class="j-favorite-num">1</span>
 </body>
 </html>
-<script src="js/dist/jquery-3.3.1.min.js"></script>
-<script src="js/dist/systemjs.js"></script>
-<script src="./js/index.js"></script>
+<script src="./js/lib/jquery.min.js"></script>
+<script src="./js/lib/system.js"></script>
+<script src="./js/dist/favorite.js"></script>
+<script>
+  SystemJS.import('./js/dist/favorite.js');
+  $.Thumb = Thumb;
+  $.PraiseButton = PraiseButton;
+
+  $.fn.addFavorite = function (num) {
+    this.after('<span class="js-add-num">0</span>');
+
+    var thumb = new $.Thumb(num);
+    this.click(function () {
+      thumb.addFavorite();
+      $('.js-add-num').text(thumb.getFavorite());
+    });
+    return this;
+  };
+
+  $('.j-add-favorite').addFavorite(0);
+</script>
