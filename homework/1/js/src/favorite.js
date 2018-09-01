@@ -23,3 +23,4 @@ class Thumb extends PraiseButton {
   }
 }
 
+export {PraiseButton, Thumb};

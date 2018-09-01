@@ -17,6 +17,9 @@
     "karma": "^3.0.0",
     "karma-coverage": "^1.1.2",
     "karma-jasmine": "^1.1.2",
-    "karma-phantomjs-launcher": "^1.0.4"
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-requirejs": "^1.1.0",
+    "requirejs": "^2.3.6",
+    "systemjs": "^0.21.4"
   }
 }

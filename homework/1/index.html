@@ -17,21 +17,23 @@
 </html>
 <script src="./js/lib/jquery.min.js"></script>
 <script src="./js/lib/system.js"></script>
-<script src="./js/dist/favorite.js"></script>
 <script>
-  SystemJS.import('./js/dist/favorite.js');
-  $.Thumb = Thumb;
-  $.PraiseButton = PraiseButton;
+  SystemJS.import('./js/dist/favorite.js').then(function (methods) {
+    var Thumb = methods.Thumb;
+    $.fn.addFavorite = function (num) {
+      var thumb = new Thumb(num);
+      this.after('<span class="js-add-num">' + thumb.getFavorite() + '</span>');
+      this.click(function () {
+        thumb.addFavorite();
+        $('.js-add-num').text(thumb.getFavorite());
+      });
+      return this;
+    };
+    cb();
+  });
 
-  $.fn.addFavorite = function (num) {
-    var thumb = new $.Thumb(num);
-    this.after('<span class="js-add-num">' + thumb.getFavorite() + '</span>');
-    this.click(function () {
-      thumb.addFavorite();
-      $('.js-add-num').text(thumb.getFavorite());
-    });
-    return this;
-  };
 
-  $('.j-add-favorite').addFavorite();
+  function cb() {
+    $('.j-add-favorite').addFavorite();
+  }
 </script>
