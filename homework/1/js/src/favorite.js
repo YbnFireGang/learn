@@ -22,5 +22,3 @@ class Thumb extends PraiseButton {
     return this.finger;
   }
 }
-
-export {PraiseButton, Thumb};

@@ -17,9 +17,10 @@
 </html>
 <script src="./js/lib/jquery.min.js"></script>
 <script src="./js/lib/system.js"></script>
+<script src="./js/dist/favorite.js"></script>
 <script>
-  SystemJS.import('./js/dist/favorite.js').then(function (methods) {
-    var Thumb = methods.Thumb;
+  (function ($) {
+    $.Thumb = Thumb;
     $.fn.addFavorite = function (num) {
       var thumb = new Thumb(num);
       this.after('<span class="js-add-num">' + thumb.getFavorite() + '</span>');
@@ -29,11 +30,6 @@
       });
       return this;
     };
-    cb();
-  });
-
-
-  function cb() {
     $('.j-add-favorite').addFavorite();
-  }
+  })(jQuery)
 </script>
