@@ -1,6 +1,6 @@
 const config = {
   server: {
-    port: 3001
+    port: 3000
   },
   database: {
     database: 'test',

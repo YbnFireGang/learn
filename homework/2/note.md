@@ -11,3 +11,6 @@
 - views: 模板文件
 - index.js: 启动文件
 
+
+> 接口测试
+- `npm install mocha supertest -D`

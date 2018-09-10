@@ -54,17 +54,6 @@ router
 app.use(router.routes());
 
 //启动koa服务
-app.listen(server.port);
+let serve = app.listen(server.port);
 
-
-async function getFavorite() {
-  return await query.getFavorite
-    .then(result => {
-      return {
-        code: 1,
-        data: result[0].favorite
-      }
-    })
-}
-
-
+module.exports = serve;
