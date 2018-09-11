@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "supervisor index.js",
-    "test-interface": "mocha ./test/interface-test/index.js"
+    "interface-test": "mocha ./test/interface-test/index.js",
+    "unit-test": "karma start karma.conf.js",
+    "web-test": "node ./test/web-test/index.js"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +21,13 @@
     "mysql": "^2.16.0"
   },
   "devDependencies": {
+    "jasmine-core": "^3.2.1",
+    "karma": "^3.0.0",
+    "karma-coverage": "^1.1.2",
+    "karma-jasmine": "^1.1.2",
+    "karma-phantomjs-launcher": "^1.0.4",
     "mocha": "^5.2.0",
+    "selenium-webdriver": "^4.0.0-alpha.1",
     "supertest": "^3.3.0"
   }
 }

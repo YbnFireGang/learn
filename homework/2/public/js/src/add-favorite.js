@@ -1,4 +1,4 @@
-(function (doc, $) {
+(function (doc, $, utils) {
   var $addFavorite = doc.querySelector('.j-add-favorite'),
     $favoriteNum = doc.querySelector('.j-favorite-num');
 
@@ -13,7 +13,7 @@
       console.log(error);
     });
 
-  var t = throttle(addFavorite, 3000, function () {
+  var t = utils.throttle(addFavorite, 3000, function () {
     console.log('to much times')
   });
 
@@ -34,17 +34,4 @@
       });
   }
 
-  function throttle(fn, wait, cb) {
-    var before = Date.now();
-    return function () {
-      var now = Date.now();
-      if (now - before >= wait) {
-        before = now;
-        fn();
-      } else {
-        cb();
-      }
-    }
-  }
-
-})(document, axios);
+})(document, axios, utils);
