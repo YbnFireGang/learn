@@ -20,7 +20,7 @@ app.use(views(__dirname + '/views', {
 const koaRouter = require('koa-router');
 const router = new koaRouter();
 router
-  .get('/index', async ctx => {
+  .get('/index/index', async ctx => {
     await ctx.render('index');
   })
   .get('/get-favorite', async ctx =>
