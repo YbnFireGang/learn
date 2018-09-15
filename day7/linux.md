@@ -11,3 +11,4 @@
 - tail [-n number] txt
 - ln [-s] source target
 - tar [xvf] file //unzip file
+- lsof -i :port //look port process pid

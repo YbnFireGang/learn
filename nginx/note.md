@@ -1,0 +1,13 @@
+- `apt install gcc` 安装ng相关依赖包
+-  `wget http://nginx.org/download/nginx-1.4.5.tar.gz` 下载ng
+- `tar -zxvf nginx-1.4.5.tar.gz` 解压ng
+- `cd nginix-1.4.5/` 
+- `./configure` 
+- `make & make install` 编译ng
+ 
+- `ps -ef | grep nginx` 查看ng的进程
+- `lsof -i:xxxx` 查看端口号是否被暂用
+- `nginx -s reopen` ng 启动
+- `nginx -s reload` 修改nginx.conf。重新载命令
+- `ngnix -c /usr/local/nginx/conf/ngnix.conf` 每次reopen会报错
+- `nginx -s stop` ng 停止
