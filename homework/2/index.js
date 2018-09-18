@@ -1,6 +1,4 @@
-const {server} = require('./config/default.config.js');
-const querySQL = require('./lib/index');
-const query = require('./lib/database.query');
+const server = require('./config/server.config.js');
 
 //koa 框架
 const Koa = require('koa');
@@ -16,42 +14,10 @@ app.use(views(__dirname + '/views', {
   map: {html: 'ejs'}
 }));
 
-//koa 路由
-const koaRouter = require('koa-router');
-const router = new koaRouter();
-router
-  .get('/index/index', async ctx => {
-    await ctx.render('index');
-  })
-  .get('/get-favorite', async ctx =>
-    await query(querySQL.getFavorite)
-      .then(result => {
-        ctx.body = {
-          code: 1,
-          data: result[0].favorite
-        };
-      })
-  )
-
-  .post('/add-favorite', async ctx => {
-    await query(querySQL.addFavorite)
-      .then(async result => {
-        await query(querySQL.getFavorite)
-          .then(result => {
-            ctx.body = {
-              code: 1,
-              data: result[0].favorite
-            }
-          })
-      })
-  })
-
-  .get('/*', ctx => {
-    ctx.status = 404;
-    ctx.body = 'file not find';
-  });
-
+//使用路由
+const router =require('./controller/router');
 app.use(router.routes());
+
 
 //启动koa服务
 let serve = app.listen(server.port);

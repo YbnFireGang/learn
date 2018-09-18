@@ -1,12 +1,4 @@
-const {database} = require('../config/default.config.js');
-
-const mysql = require('mysql');
-const pool = mysql.createPool({
-  host: database.host,
-  user: database.username,
-  password: database.password,
-  database: database.database,
-});
+const {pool} = require('./init');
 
 const query = (sql, values) =>
   new Promise((resolve, reject) =>
