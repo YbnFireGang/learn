@@ -14,3 +14,9 @@
 
 > 接口测试
 - `npm install mocha supertest -D`
+
+> MVC
+
+- M: 具体的业务逻辑 + 数据处理
+- V: 视图
+- C: 页面的整体控制
