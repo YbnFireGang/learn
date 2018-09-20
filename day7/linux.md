@@ -1,14 +1,9 @@
-> command
-- cd
-- ls
-- pwd [-P] //current working directory
-- mkdir file-name [-m -p] //create empty directory
-- rmdir file-name [-p] //remove empty directory
-- cp original-file target-file [-r]
-- rm file [-r -i -f]
-- mv original-file target-file [-f -i]
-- head [-n number] txt
-- tail [-n number] txt
-- ln [-s] source target
-- tar [xvf] file //unzip file
-- lsof -i :port //look port process pid
+ 命令| 含义
+:---:|:---:
+ pwd | 显示当前文件目录
+ mv original-file target-file | 移动文件
+ head [-n number] txt | 显示前几个行
+ tail [-n number] txt | 显示后几个行
+ ln [-s] source target | 建立软链接
+ tar zxvf file | 解压文件
+ isof -i:port | 查看端口被占用情况
