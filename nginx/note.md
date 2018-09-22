@@ -1,4 +1,4 @@
-> ngnix配置
+> nginx配置
 - `apt install gcc` 安装ng相关依赖包
 -  `wget http://nginx.org/download/nginx-1.4.5.tar.gz` 下载ng
 - `tar -zxvf nginx-1.4.5.tar.gz` 解压ng
@@ -6,12 +6,23 @@
 - `./configure` 
 - `make & make install` 编译ng
  
-- `ps -ef | grep nginx` 查看ng的进程
-- `lsof -i:xxxx` 查看端口号是否被暂用
-- `nginx -s reopen` ng 启动
-- `nginx -s reload` 修改nginx.conf。重新载命令
-- `ngnix -c /usr/local/nginx/conf/ngnix.conf` 每次reopen会报错
-- `nginx -s stop` ng 停止
+- 修改/lib/systemd/system/nginx.service
+    ```
+    Description=nginx - high performance web server  //描述服务
+    After=network.target remote-fs.target nss-lookup.target   //描述服务类别
+    
+    [Service]//服务的一些具体运行参数的设置
+    Type=forking  //后台运行的形式
+    PIDFile=/usr/local/nginx/logs/nginx.pid   //PID文件的路径
+    ExecStartPre=/usr/local/nginx/sbin/nginx -t -c /usr/local/nginx/conf/nginx.conf //启动准备
+    ExecStart=/usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf//启动命令
+    ExecReload=/usr/local/nginx/sbin/nginx -s reload //重启命令
+    ExecStop=/usr/local/nginx/sbin/nginx -s stop  //停止命令
+    ExecQuit=/usr/local/nginx/sbin/nginx -s quit //快速停止
+    PrivateTmp=true  //给服务分配临时空间
+    ```
+- `systemctl daemon-reload` //在启动服务之前，需要先重载systemctl命令
+- `systemctl start nginx.service`
 
 >HTTP
 - HTTP请求组成：请求行(method, url, 协议版本)，消息报头，请求正文
@@ -28,3 +39,24 @@
     4. 负载均衡
     5. 加密
     6. SSL安全
+    
+> 免密登录
+
+- `ssh-keygen -t rsa -C 'yourname' -f 'yourname_rsa'`
+- `ssh-copy-id -i pk root@xx.com`
+- `vim config` =>新建config文件
+    ```
+    User root
+    Host wuxianwei
+    HostName 100.100.100.100
+    Port 22
+    StrictHostKeyChecking no
+    IdentityFile ~/.ssh/autologin_rsa
+    IdentitiesOnly yes
+    Protocol 2
+    Compression yes
+    ServerAliveInterval 60
+    ServerAliveCountMax 20
+    LogLevel INFO
+    ```
+- `ssh wuxianwei` 直接登录
