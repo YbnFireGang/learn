@@ -1,0 +1,2 @@
+- `npm install x-tag -S` 安装xtag
+- `npm install webpack gulp -D` 安装webpack, gulp
