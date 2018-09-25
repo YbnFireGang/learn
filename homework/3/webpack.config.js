@@ -1,6 +1,11 @@
+const webpack = require('webpack');
 module.exports = {
-  entry: '',
-  output: '',
-  loader: '',
-  plugins: []
+  entry: {
+    app:["webpack-hot-middleware/client?noInfo=true&reload=true",
+      "./controller/router.js","./index.js"],
+  },
+
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+  ]
 };

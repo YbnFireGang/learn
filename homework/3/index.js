@@ -10,14 +10,14 @@ app.use(koaStatic(__dirname + "/public"));
 
 //ejs 模板
 const views = require('koa-views');
+
 app.use(views(__dirname + '/views', {
   map: {html: 'ejs'}
 }));
 
 //使用路由
-const router =require('./controller/router');
+const router = require('./controller/router');
 app.use(router.routes());
-
 
 //启动koa服务
 let serve = app.listen(server.port);
