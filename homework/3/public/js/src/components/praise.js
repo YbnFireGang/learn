@@ -1,3 +1,4 @@
+import css from '../../../css/index.css';
 (function (doc, xtag, $) {
   xtag.create('x-praise', class extends XTagElement {
     constructor() {
