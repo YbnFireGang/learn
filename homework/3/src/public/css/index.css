@@ -1,5 +1,8 @@
 .add-favorite {
+    display: inline-block;
     cursor: pointer;
     width: 30px;
+    height: 30px;
+    background: #0074D9;
     margin-right: 5px;
 }

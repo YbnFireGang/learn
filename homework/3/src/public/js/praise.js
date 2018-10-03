@@ -1,12 +1,7 @@
-import css from '../../../css/index.css';
+import '../css/index.css';
+
 (function (doc, xtag, $) {
   xtag.create('x-praise', class extends XTagElement {
-    constructor() {
-      super();
-      this.$addFavorite = null;
-      this.$favoriteNum = null;
-    }
-
     connectedCallback() {
       this.initTemplate();
       this.getFavoriteNum();
@@ -14,10 +9,8 @@ import css from '../../../css/index.css';
 
     //初始化点赞模板
     initTemplate() {
-      this.innerHTML = `<img src="/img/favorite.png" alt="" class="j-add-favorite add-favorite">
+      this.innerHTML = `<span class="j-add-favorite add-favorite"></span>
     <span class="j-favorite-num">0</span>`;
-      this.$addFavorite = doc.querySelector('.j-add-favorite');
-      this.$favoriteNum = doc.querySelector('.j-favorite-num');
     }
 
     //添加点赞事件
@@ -50,11 +43,12 @@ import css from '../../../css/index.css';
 
     //获取点赞数
     getFavoriteNum() {
+      let $favoriteNum = doc.querySelector('.j-favorite-num');
       $.get('/get-favorite')
         .then(resp => {
           let {data, code} = resp.data;
           if (code === 1) {
-            this.$favoriteNum.innerHTML = data;
+            $favoriteNum.innerHTML = data;
           }
         })
         .catch(error => {

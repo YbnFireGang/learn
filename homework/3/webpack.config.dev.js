@@ -1,13 +1,17 @@
 const webpack = require('webpack');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+
 module.exports = {
   entry: {
-    praise: './public/js/src/components/praise.js',
+    xtag: 'x-tag',
+    axios: 'axios',
+    praise: './src/public/js/praise.js',
   },
   output: {
-    filename: '[name].[hash:5].js',
-    path: __dirname + '/build/public/js/src/components/'
+    filename: 'public/js/[name].[hash:5].js',
+    path: __dirname + '/build/'
   },
   mode: 'development',
   module: {
@@ -21,7 +25,6 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
@@ -32,13 +35,17 @@ module.exports = {
     ]
   },
   plugins: [
-    new UglifyJsPlugin({
-      uglifyOptions: {
-        compress: false
-      }
+    new HtmlWebpackPlugin({
+      filename: "src/views/index.html",
+      template: "./src/views/index.html",
     }),
+
     new MiniCssExtractPlugin({
-      filename: "../../../css/[name].[hash:5].css"
-    })
-  ]
+      filename: "public/css/[name].[hash:5].css"
+    }),
+    new webpack.ProvidePlugin({
+      $: 'axios',
+      xtag: 'x-tag'
+    }),
+  ],
 };

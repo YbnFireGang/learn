@@ -7,7 +7,7 @@ const app = new Koa();
 
 //静态资源设置
 const koaStatic = require("koa-static");
-app.use(koaStatic(__dirname + "../public"));
+app.use(koaStatic(__dirname + "/"));
 
 //ejs 模板
 const views = require('koa-views');
