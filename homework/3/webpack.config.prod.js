@@ -1,14 +1,10 @@
-const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-
 module.exports = {
   entry: {
-    // axios: './src/public/js/lib/axios.js',
-    // xtag: './src/public/js/lib/xtag.js',
     praise: './src/public/js/praise.js',
   },
   output: {
@@ -26,22 +22,34 @@ module.exports = {
         ]
       },
       {
+        test: /\.(png|jpg)$/,
+        loader: 'url-loader',
+        options: {
+          name: '[name]-[hash:5].[ext]',
+          limit: 1000,
+          outputPath: 'public/imgs/'
+        }
+      },
+
+      {
         test: /\.js$/,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
+            presets: ['@babel/preset-env'],
+            plugins: ['@babel/plugin-transform-runtime']
           }
         }
       }
     ]
   },
   plugins: [
-    // new UglifyJsPlugin({
-    //   uglifyOptions: {
-    //     compress: false
-    //   }
-    // }),
+    new UglifyJsPlugin({
+      uglifyOptions: {
+        compress: true
+      }
+    }),
     new HtmlWebpackPlugin({
       filename: "views/index.html",
       template: "./src/views/index.html",
@@ -57,7 +65,7 @@ module.exports = {
     }),
 
     new MiniCssExtractPlugin({
-      filename: "css/[name].[hash:5].css"
+      filename: "public/css/[name].[hash:5].css"
     }),
   ],
   optimization: {

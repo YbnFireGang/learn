@@ -1,12 +1,8 @@
-const webpack = require('webpack');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-
 module.exports = {
   entry: {
-    xtag: 'x-tag',
-    axios: 'axios',
     praise: './src/public/js/praise.js',
   },
   output: {
@@ -24,11 +20,23 @@ module.exports = {
         ]
       },
       {
+        test: /\.(png|jpg)$/,
+        loader: 'url-loader',
+        options: {
+          name: '[name]-[hash:5].[ext]',
+          limit: 1000,
+          outputPath: 'public/imgs/'
+        }
+      },
+
+      {
         test: /\.js$/,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
+            presets: ['@babel/preset-env'],
+            plugins: ['@babel/plugin-transform-runtime']
           }
         }
       }
@@ -36,16 +44,12 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: "src/views/index.html",
+      filename: "views/index.html",
       template: "./src/views/index.html",
     }),
 
     new MiniCssExtractPlugin({
-      filename: "public/css/[name].[hash:5].css"
+      filename: "css/[name].[hash:5].css"
     }),
-    new webpack.ProvidePlugin({
-      $: 'axios',
-      xtag: 'x-tag'
-    }),
-  ],
+  ]
 };

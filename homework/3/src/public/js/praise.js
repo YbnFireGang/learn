@@ -1,21 +1,36 @@
 import '../css/index.css';
+import xtag from 'x-tag';
+import axios from 'axios';
 
-(function (doc, xtag, $) {
-  xtag.create('x-praise', class extends XTagElement {
-    connectedCallback() {
-      this.initTemplate();
+const img = require('../img/favorite.png');
+xtag.register('x-praise', {
+  content: `<img src='../${img}' class="j-add-favorite add-favorite" /><span class="j-favorite-num">0</span>`,
+  lifecycle: {
+    created() {
       this.getFavoriteNum();
     }
-
-    //初始化点赞模板
-    initTemplate() {
-      this.innerHTML = `<span class="j-add-favorite add-favorite"></span>
-    <span class="j-favorite-num">0</span>`;
+  },
+  methods: {
+    //获取点赞数
+    getFavoriteNum() {
+      let $favoriteNum = document.querySelector('.j-favorite-num');
+      axios.get('/get-favorite')
+        .then(resp => {
+          let {data, code} = resp.data;
+          if (code === 1) {
+            $favoriteNum.innerHTML = data;
+          }
+        })
+        .catch(error => {
+          console.log(error);
+        });
     }
+  },
+  events: {
+    click(e) {
+      if (!e.target.classList.contains('j-add-favorite')) return;
 
-    //添加点赞事件
-    'click::event:delegate(.j-add-favorite)'() {
-      let $favoriteNum = doc.querySelector('.j-favorite-num');
+      let $favoriteNum = document.querySelector('.j-favorite-num');
       if (this.timer) {
         console.info('点击太快了，暂停1s');
         clearInterval(this.timer);
@@ -24,11 +39,11 @@ import '../css/index.css';
       this.timer = setTimeout(async () => {
         await addFavorite();
         this.timer = null;
-      }, 600);
+      }, 800);
 
       //添加点赞数
       async function addFavorite() {
-        await $.post('/add-favorite')
+        await axios.post('/add-favorite')
           .then(resp => {
             let {data, code} = resp.data;
             if (code === 1) {
@@ -40,22 +55,5 @@ import '../css/index.css';
           });
       }
     }
-
-    //获取点赞数
-    getFavoriteNum() {
-      let $favoriteNum = doc.querySelector('.j-favorite-num');
-      $.get('/get-favorite')
-        .then(resp => {
-          let {data, code} = resp.data;
-          if (code === 1) {
-            $favoriteNum.innerHTML = data;
-          }
-        })
-        .catch(error => {
-          console.log(error);
-        });
-    }
-  });
-
-
-})(document, xtag, axios);
+  }
+});
