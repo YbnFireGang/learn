@@ -45,11 +45,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new UglifyJsPlugin({
-      uglifyOptions: {
-        compress: true
-      }
-    }),
+    new UglifyJsPlugin(),
     new HtmlWebpackPlugin({
       filename: "views/index.html",
       template: "./src/views/index.html",
