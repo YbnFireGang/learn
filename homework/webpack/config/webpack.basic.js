@@ -1,7 +1,7 @@
 const path = require('path');
-const CONFIG =require('./index');
+const CONFIG = require('./index');
 const miniCssExtractPlugin = require("mini-css-extract-plugin");
-
+const cleanWebpackPlugin = require('clean-webpack-plugin');
 const webpackBar = require('webpackbar');
 const webpackNotifierPlugin = require('webpack-notifier');
 
@@ -66,5 +66,6 @@ module.exports = {
   plugins: [
     new webpackNotifierPlugin({title: 'Webpack done'}),
     new webpackBar(),
+    new cleanWebpackPlugin('./build')
   ]
 };

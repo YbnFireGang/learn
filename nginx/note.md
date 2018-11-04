@@ -42,6 +42,7 @@
     
 > 免密登录
 
+-  在.ssh文件中操作
 - `ssh-keygen -t rsa -C 'yourname' -f 'yourname_rsa'`
 - `ssh-copy-id -i pk root@xx.com`
 - `vim config` =>新建config文件
@@ -51,7 +52,7 @@
     HostName 100.100.100.100
     Port 22
     StrictHostKeyChecking no
-    IdentityFile ~/.ssh/autologin_rsa
+    IdentityFile ~/.ssh/wuxianwei
     IdentitiesOnly yes
     Protocol 2
     Compression yes
