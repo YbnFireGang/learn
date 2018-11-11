@@ -1,0 +1,191 @@
+[2018-11-11T05:25:58.076] [ERROR] ruleFile - sss
+[2018-11-11T05:26:16.830] [ERROR] ruleFile - { method: 'GET',
+  url: '/about/11',
+  header:
+   { host: 'localhost:3000',
+     connection: 'keep-alive',
+     'cache-control': 'max-age=0',
+     'upgrade-insecure-requests': '1',
+     'user-agent':
+      'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.81 Safari/537.36',
+     accept:
+      'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+     'accept-encoding': 'gzip, deflate, br',
+     'accept-language': 'en-US,en;q=0.9',
+     cookie:
+      'Webstorm-e3f46055=73fc8b40-73bd-49b8-93fe-ff2ab629a19e; _ga=GA1.1.1892853987.1541345158' } }
+[2018-11-11T05:26:25.995] [ERROR] ruleFile - { method: 'GET',
+  url: '/about/11',
+  header:
+   { host: 'localhost:3000',
+     connection: 'keep-alive',
+     'cache-control': 'max-age=0',
+     'upgrade-insecure-requests': '1',
+     'user-agent':
+      'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.81 Safari/537.36',
+     accept:
+      'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+     'accept-encoding': 'gzip, deflate, br',
+     'accept-language': 'en-US,en;q=0.9',
+     cookie:
+      'Webstorm-e3f46055=73fc8b40-73bd-49b8-93fe-ff2ab629a19e; _ga=GA1.1.1892853987.1541345158' } }
+[2018-11-11T05:51:14.009] [ERROR] ruleFile - { method: 'GET',
+  url: '/asset/style/home.css',
+  header:
+   { host: 'localhost:3000',
+     connection: 'keep-alive',
+     'if-modified-since': 'Sun, 11 Nov 2018 13:51:04 GMT',
+     'user-agent':
+      'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.81 Safari/537.36',
+     accept: 'text/css,*/*;q=0.1',
+     referer: 'http://localhost:3000/',
+     'accept-encoding': 'gzip, deflate, br',
+     'accept-language': 'en-US,en;q=0.9',
+     cookie:
+      'Webstorm-e3f46055=73fc8b40-73bd-49b8-93fe-ff2ab629a19e; _ga=GA1.1.1892853987.1541345158' } }
+[2018-11-11T05:51:14.015] [ERROR] ruleFile - { method: 'GET',
+  url: '/asset/js/home.68edd.js',
+  header:
+   { host: 'localhost:3000',
+     connection: 'keep-alive',
+     'if-modified-since': 'Sun, 11 Nov 2018 13:51:04 GMT',
+     'user-agent':
+      'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.81 Safari/537.36',
+     accept: '*/*',
+     referer: 'http://localhost:3000/',
+     'accept-encoding': 'gzip, deflate, br',
+     'accept-language': 'en-US,en;q=0.9',
+     cookie:
+      'Webstorm-e3f46055=73fc8b40-73bd-49b8-93fe-ff2ab629a19e; _ga=GA1.1.1892853987.1541345158' } }
+[2018-11-11T06:00:58.397] [ERROR] ruleFile - { method: 'GET',
+  url: '/asset/home.83379.css',
+  header:
+   { host: 'localhost:3000',
+     connection: 'keep-alive',
+     'user-agent':
+      'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.81 Safari/537.36',
+     accept: 'text/css,*/*;q=0.1',
+     referer: 'http://localhost:3000/',
+     'accept-encoding': 'gzip, deflate, br',
+     'accept-language': 'en-US,en;q=0.9',
+     cookie:
+      'Webstorm-e3f46055=73fc8b40-73bd-49b8-93fe-ff2ab629a19e; _ga=GA1.1.1892853987.1541345158',
+     'if-modified-since': 'Sun, 11 Nov 2018 13:52:28 GMT' } }
+[2018-11-11T06:00:58.402] [ERROR] ruleFile - { method: 'GET',
+  url: '/asset/js/home.83379.js',
+  header:
+   { host: 'localhost:3000',
+     connection: 'keep-alive',
+     'if-modified-since': 'Sun, 11 Nov 2018 13:52:28 GMT',
+     'user-agent':
+      'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.81 Safari/537.36',
+     accept: '*/*',
+     referer: 'http://localhost:3000/',
+     'accept-encoding': 'gzip, deflate, br',
+     'accept-language': 'en-US,en;q=0.9',
+     cookie:
+      'Webstorm-e3f46055=73fc8b40-73bd-49b8-93fe-ff2ab629a19e; _ga=GA1.1.1892853987.1541345158' } }
+[2018-11-11T06:01:07.977] [ERROR] ruleFile - { method: 'GET',
+  url: '/asset/home.83379.css',
+  header:
+   { host: 'localhost:3000',
+     connection: 'keep-alive',
+     'user-agent':
+      'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.81 Safari/537.36',
+     accept: 'text/css,*/*;q=0.1',
+     referer: 'http://localhost:3000/',
+     'accept-encoding': 'gzip, deflate, br',
+     'accept-language': 'en-US,en;q=0.9',
+     cookie:
+      'Webstorm-e3f46055=73fc8b40-73bd-49b8-93fe-ff2ab629a19e; _ga=GA1.1.1892853987.1541345158' } }
+[2018-11-11T06:01:07.978] [ERROR] ruleFile - { method: 'GET',
+  url: '/asset/js/home.83379.js',
+  header:
+   { host: 'localhost:3000',
+     connection: 'keep-alive',
+     'user-agent':
+      'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.81 Safari/537.36',
+     accept: '*/*',
+     referer: 'http://localhost:3000/',
+     'accept-encoding': 'gzip, deflate, br',
+     'accept-language': 'en-US,en;q=0.9',
+     cookie:
+      'Webstorm-e3f46055=73fc8b40-73bd-49b8-93fe-ff2ab629a19e; _ga=GA1.1.1892853987.1541345158' } }
+[2018-11-11T06:01:13.008] [ERROR] ruleFile - { method: 'GET',
+  url: '/asset/home.83379.css',
+  header:
+   { host: 'localhost:3000',
+     connection: 'keep-alive',
+     'user-agent':
+      'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.81 Safari/537.36',
+     accept: 'text/css,*/*;q=0.1',
+     referer: 'http://localhost:3000/',
+     'accept-encoding': 'gzip, deflate, br',
+     'accept-language': 'en-US,en;q=0.9',
+     cookie:
+      'Webstorm-e3f46055=73fc8b40-73bd-49b8-93fe-ff2ab629a19e; _ga=GA1.1.1892853987.1541345158' } }
+[2018-11-11T06:01:13.009] [ERROR] ruleFile - { method: 'GET',
+  url: '/asset/js/home.83379.js',
+  header:
+   { host: 'localhost:3000',
+     connection: 'keep-alive',
+     'user-agent':
+      'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.81 Safari/537.36',
+     accept: '*/*',
+     referer: 'http://localhost:3000/',
+     'accept-encoding': 'gzip, deflate, br',
+     'accept-language': 'en-US,en;q=0.9',
+     cookie:
+      'Webstorm-e3f46055=73fc8b40-73bd-49b8-93fe-ff2ab629a19e; _ga=GA1.1.1892853987.1541345158' } }
+[2018-11-11T06:01:13.993] [ERROR] ruleFile - { method: 'GET',
+  url: '/asset/home.83379.css',
+  header:
+   { host: 'localhost:3000',
+     connection: 'keep-alive',
+     'user-agent':
+      'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.81 Safari/537.36',
+     accept: 'text/css,*/*;q=0.1',
+     referer: 'http://localhost:3000/',
+     'accept-encoding': 'gzip, deflate, br',
+     'accept-language': 'en-US,en;q=0.9',
+     cookie:
+      'Webstorm-e3f46055=73fc8b40-73bd-49b8-93fe-ff2ab629a19e; _ga=GA1.1.1892853987.1541345158' } }
+[2018-11-11T06:01:13.994] [ERROR] ruleFile - { method: 'GET',
+  url: '/asset/js/home.83379.js',
+  header:
+   { host: 'localhost:3000',
+     connection: 'keep-alive',
+     'user-agent':
+      'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.81 Safari/537.36',
+     accept: '*/*',
+     referer: 'http://localhost:3000/',
+     'accept-encoding': 'gzip, deflate, br',
+     'accept-language': 'en-US,en;q=0.9',
+     cookie:
+      'Webstorm-e3f46055=73fc8b40-73bd-49b8-93fe-ff2ab629a19e; _ga=GA1.1.1892853987.1541345158' } }
+[2018-11-11T06:01:14.424] [ERROR] ruleFile - { method: 'GET',
+  url: '/asset/home.83379.css',
+  header:
+   { host: 'localhost:3000',
+     connection: 'keep-alive',
+     'user-agent':
+      'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.81 Safari/537.36',
+     accept: 'text/css,*/*;q=0.1',
+     referer: 'http://localhost:3000/',
+     'accept-encoding': 'gzip, deflate, br',
+     'accept-language': 'en-US,en;q=0.9',
+     cookie:
+      'Webstorm-e3f46055=73fc8b40-73bd-49b8-93fe-ff2ab629a19e; _ga=GA1.1.1892853987.1541345158' } }
+[2018-11-11T06:01:14.428] [ERROR] ruleFile - { method: 'GET',
+  url: '/asset/js/home.83379.js',
+  header:
+   { host: 'localhost:3000',
+     connection: 'keep-alive',
+     'user-agent':
+      'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.81 Safari/537.36',
+     accept: '*/*',
+     referer: 'http://localhost:3000/',
+     'accept-encoding': 'gzip, deflate, br',
+     'accept-language': 'en-US,en;q=0.9',
+     cookie:
+      'Webstorm-e3f46055=73fc8b40-73bd-49b8-93fe-ff2ab629a19e; _ga=GA1.1.1892853987.1541345158' } }
