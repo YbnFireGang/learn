@@ -5,7 +5,6 @@ const htmlWebpackPlugin = require('html-webpack-plugin');
 const miniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const CONFIG = require('./index');
-const MyPlugin = require('./test');
 
 const merge = require('webpack-merge');
 const dev = {
@@ -21,7 +20,6 @@ const dev = {
     new miniCssExtractPlugin({
       filename: "style/[name].css"
     }),
-    new MyPlugin({ options: '' })
   ],
 
   devServer: {
