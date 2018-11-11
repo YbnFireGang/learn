@@ -1,4 +1,3 @@
-
 {% block content %}
-    <h1>footer</h1>
+    <footer>footer</footer>
 {% endblock %}

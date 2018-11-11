@@ -6,8 +6,11 @@
     {% block head %}{% endblock %}
 </head>
 <body>
-{% include "../../component/demo-header/index.swig" %}
+{% include "../header/header.swig" %}
 {% block content %}{% endblock %}
-{% include "../../component/demo-footer/index.swig" %}
+{% include "../footer/footer.swig" %}
 </body>
 </html>
+{% block scripts %}
+    <!--injectjs-->
+{% endblock %}
